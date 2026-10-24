@@ -1,59 +1,48 @@
 # 4VPizzaAnneSuarez
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.1.
+Aplicación web interactiva desarrollada para la gestión y pedido de pizzas en línea. 
 
-## Development server
+Este proyecto está construido con **Angular CLI** (versión 22.2.1), **TypeScript** y **Bootstrap 5 / SCSS**.
 
-To start a local development server, run:
+---
+## Componentes Principales
+* **`Header`**: Cabecera visual de la aplicación con el nombre y el logo de 4V Pizza.
+* **`Navbar`**: Barra de navegación que incluye:
+  * Buscador de pizzas por ingredientes (comunicado mediante `@Output`).
+  * Enlaces de navegación (*Ver pizzas* y *Realizar pedido*).
+* **`Lista de Pizzas`**: Contenedor principal que maneja dos estados de la lista:
+  * Lista completa de pizzas.
+  * Lista filtrada según los ingredientes seleccionados/buscados (comunicada mediante `@Input` y reactividad en tiempo real).
+* **`Card de Pizza`**: Componente individual iterado mediante un array/modelo (`.ts`) para mostrar cada pizza con:
+  * Título y precio en la cabecera.
+  * Imagen visual del producto.
+  * Lista de ingredientes.
+* **`Formulario de Pedido`**: Formulario interactivo en Angular para la gestión de pedidos, donde se recogen:
+  * Hora de entrega deseada.
+  * Dirección de envío.
+  * Método de pago (Bizum o Tarjeta).
+* **`Footer`**: Pie de página con información y créditos.
+
+---
+
+## Responsive Design
+* **Grid Adaptativo (Bootstrap Grid)**:
+  * **Escritorio**: 4 columnas por fila.
+  * **Tablet**: 2 columnas por fila.
+  * **Móvil**: 1 columna por fila.
+ 
+---
+
+## Desarrollo e Instalación
+Para iniciar el servidor de desarrollo local, ejecuta:
 
 ```bash
 ng serve
 ```
+Una vez que el servidor esté en marcha, en `http://localhost:4200/` se verá la página web. La aplicación se recargará automáticamente cada vez que modifiques alguno de los archivos fuente.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+Para crear un nuevo componente, ejecuta:
 ```bash
-ng generate component component-name
+ng generate component nombre-del-componente
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
