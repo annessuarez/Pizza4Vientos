@@ -4,6 +4,8 @@ Aplicación web interactiva desarrollada para la gestión y pedido de pizzas en 
 
 Este proyecto está construido con **Angular CLI** (versión 22.2.1), **TypeScript** y **Bootstrap 5 / SCSS**.
 
+Los comentarios marcados con **`ANNE`** se deben omitir, ya que son notas internas / observaciones previas que no afectan a la versión final. 
+
 ---
 ## Componentes Principales
 * **`Header`**: Cabecera visual de la aplicación con el nombre y el logo de 4V Pizza.
