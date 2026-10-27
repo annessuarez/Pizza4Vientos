@@ -9,7 +9,7 @@
           <a class="nav-link" href="#pedido">Realizar pedido</a>
         </li>
       </ul>
-      <form class="d-flex">
+      <form (submit)="Buscar_ingrediente()" class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Busca por ingredientes..." aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Buscar</button>
       </form>

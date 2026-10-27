@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, model } from '@angular/core';
 import { PizzaModel } from '../models/PizzaModel'; //hay que importar el modelo creado
 import { PizzaCard } from '../pizza-card/pizza-card';
-import { NgClass } from '../../../node_modules/@angular/common/types/_common_module-chunk';
+import { NavBar } from '../nav-bar/nav-bar';
 
 @Component({
   imports: [PizzaCard],
@@ -11,7 +11,18 @@ import { NgClass } from '../../../node_modules/@angular/common/types/_common_mod
 })
 
 export class Lista {
-  pizzas: PizzaModel[] = [ //es lo mismo que hacer en java List<PizzaModel> pizzas = new ArrayList<>;
+  //TODO: terinar ejercicio 3
+  public obtener_pizzas(buscado:string){
+    pizzasFiltradas: PizzaModel[] = this.pizzas;
+    for (let p of this.pizzas){
+      if (p.ingredientes.toLowerCase().includes(buscado.toLowerCase())){
+        pizzasFiltradas.
+      }
+    }
+
+  }
+
+  pizzas: PizzaModel[] = [ // ANNE: es lo mismo que hacer en java List<PizzaModel> pizzas = new ArrayList<>;
   {
     nombre: "Margarita",
     imagen: "1.png",
