@@ -1,12 +1,10 @@
 export class PizzaModel{
-    id: number;
     nombre: string;
     precio: number;
     imagen: string;
-    ingredientes: string[];
+    ingredientes: string;
 
-    constructor(id: number, nombre: string, precio:number ,imagen: string, ingredientes: string[]) {
-        this.id = id;
+    constructor(nombre: string, precio:number ,imagen: string, ingredientes: string) {
         this.nombre = nombre;
         this.imagen = imagen;
         this.precio = precio;

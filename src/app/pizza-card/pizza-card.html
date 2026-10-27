@@ -1,0 +1,12 @@
+<div class="col">
+      <div class="card h-100">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h5 class="mb-0 fs-6 fw-bold">{{pizza().nombre}}</h5>
+            <span class="badge bg-success fs-6">{{pizza().precio}}</span>
+        </div>
+        <img [src]="pizza().imagen" class="card-img-top" alt="card-image">
+        <div class="card-body">
+          <p>{{pizza().ingredientes}}</p>
+        </div>
+      </div>
+    </div>
