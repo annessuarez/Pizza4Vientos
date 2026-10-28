@@ -14,4 +14,5 @@ import { Footer } from './footer/footer';
 })
 export class App {
   protected readonly title = signal('4VPizza_AnneSuarez');
+  textoFiltro = signal("");
 }

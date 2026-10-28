@@ -1,6 +1,6 @@
 <div class="container my-4" id="pizzas">
   <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 g-4">
-    @for (pizza of pizzas; track $index){
+    @for (pizza of pizzasFiltradas; track $index){
       <app-pizza-card [pizza]="pizza"></app-pizza-card>
     }
   </div>
