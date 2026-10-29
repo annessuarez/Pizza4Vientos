@@ -8,22 +8,27 @@ Los comentarios marcados con **`ANNE`** se deben omitir, ya que son notas intern
 
 ---
 ## Componentes Principales
-* **`Header`**: Cabecera visual de la aplicación con el nombre y el logo de 4V Pizza.
-* **`Navbar`**: Barra de navegación que incluye:
-  * Buscador de pizzas por ingredientes (comunicado mediante `@Output`).
-  * Enlaces de navegación (*Ver pizzas* y *Realizar pedido*).
-* **`Lista de Pizzas`**: Contenedor principal que maneja dos estados de la lista:
-  * Lista completa de pizzas.
-  * Lista filtrada según los ingredientes seleccionados/buscados (comunicada mediante `@Input` y reactividad en tiempo real).
-* **`Card de Pizza`**: Componente individual iterado mediante un array/modelo (`.ts`) para mostrar cada pizza con:
-  * Título y precio en la cabecera.
-  * Imagen visual del producto.
-  * Lista de ingredientes.
-* **`Formulario de Pedido`**: Formulario interactivo en Angular para la gestión de pedidos, donde se recogen:
-  * Hora de entrega deseada.
-  * Dirección de envío.
-  * Método de pago (Bizum o Tarjeta).
-* **`Footer`**: Pie de página con información y créditos.
+- **`Header`**: Cabecera visual de la aplicación con el nombre y el logo de 4V Pizza.
+- **`Navbar`**: Barra de navegación que incluye:
+  * Buscador interactivo de pizzas por ingredientes.
+  * Emisión del término de búsqueda hacia el listado mediante `@Output`.
+  * Enlaces de navegación rápida (*Ver pizzas* y *Realizar pedido*).
+- **`Lista de Pizzas`**: Contenedor principal del catálogo que gestiona la lógica de visualización:
+  * Modelo de datos en TypeScript definido como un array (`[]`) con la colección de pizzas.
+  * Manejo interno de dos estados: lista completa y lista filtrada.
+  * Recepción del filtro mediante `@Input`.
+  * Refresco automático de la pantalla al modificarse la lista filtrada.
+  * Iteración de la lista para renderizar y pasar parámetros a los componentes hijos (`Card de Pizza`).
+- **`Card de Pizza`**: Componente individual e independiente generado dinámicamente mediante iteración del listado para mostrar:
+  * Cabecera con título y precio del producto.
+  * Imagen visual de la pizza.
+  * Listado detallado de ingredientes.
+  * Recepción de los parámetros necesarios de cada pizza desde el componente padre.
+- **`Formulario de Pedido`**: Componente desarrollado con Angular para la gestión y tramitación del pedido:
+  * Selección de la hora de entrega deseada.
+  * Entrada de la dirección de envío.
+  * Selección interactiva del método de pago (Bizum o Tarjeta).
+- **`Footer`**: Pie de página estático con información corporativa y créditos de la aplicación.
 
 ---
 
