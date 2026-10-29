@@ -1,7 +1,6 @@
-import { Component, input, model, effect } from '@angular/core';
+import { Component, input, effect, output } from '@angular/core';
 import { PizzaModel } from '../models/PizzaModel'; //hay que importar el modelo creado
 import { PizzaCard } from '../pizza-card/pizza-card';
-import { NavBar } from '../nav-bar/nav-bar';
 
 @Component({
   imports: [PizzaCard],
@@ -12,6 +11,8 @@ import { NavBar } from '../nav-bar/nav-bar';
 export class Lista {
   filtro = input('');
   pizzasFiltradas: PizzaModel[] = [];
+  carrito: PizzaModel[] = [];
+  pedido = output<PizzaModel[]>();
 
   constructor() {
     //ANNE: para que la ppágina no empiece vacía
@@ -30,6 +31,12 @@ export class Lista {
         this.pizzasFiltradas.push(p);
       }
     }
+  }
+
+  //ANNE: método para actualizar el pedido
+  public recibir_pizzas(obtenida: PizzaModel){
+    this.carrito.push(obtenida);
+    this.pedido.emit(this.carrito);
   }
 
   pizzas: PizzaModel[] = [
@@ -75,7 +82,7 @@ export class Lista {
       imagen: '3.png',
       precio: 12.0,
       ingredientes:
-        'Salsa de tomate, queso mozzarella, pimiento verde, pimiento rojo, cebolla, aceitunas negras',
+        'Salsa de tomate, queso mozzarella, pimiento verde, pimiento rojo, cebolla',
     },
     {
       nombre: 'Carbonara',

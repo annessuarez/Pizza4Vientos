@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input , output} from '@angular/core';
 import { PizzaModel } from '../models/PizzaModel';
 
 @Component({
@@ -9,4 +9,12 @@ import { PizzaModel } from '../models/PizzaModel';
 })
 export class PizzaCard {
   pizza = input.required<PizzaModel>();
+  cantidad: number = 1;
+
+  pizzaAgregada = output<PizzaModel>();
+
+  public Agregar_pizza(){
+    this.pizza().cantidad = this.cantidad; //ANNE: aqui le asigna la cantidad establecida, porq por defct. tiene 1.
+    this.pizzaAgregada.emit(this.pizza());
+  }
 }
