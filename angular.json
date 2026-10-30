@@ -25,9 +25,10 @@
               }
             ],
             "styles": [
-              "src/styles.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/app/header/header.css",
+              "src/app/nav-bar/nav-bar.css"
             ]
           },
           "configurations": {

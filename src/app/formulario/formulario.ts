@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { PizzaModel } from '../models/PizzaModel';
 
 @Component({
   imports: [],
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './formulario.css',
   templateUrl: './formulario.html',
 })
-export class Formulario {}
+export class Formulario {
+  pedido = input<PizzaModel[]>([]);
+}

@@ -1,4 +1,14 @@
+nav{
+  background-color: #1C2430;
+}
+
 .nav-link:hover {
-  color: #198754; /* Verde Bootstrap */
-  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: #AB753F;
+}
+
+.btn-modificar{
+  background-color: #ffc107;
+  color: #212529;
+  border: 1px solid #ffc107;  
 }

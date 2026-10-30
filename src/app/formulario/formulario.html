@@ -1,35 +1,52 @@
 <div class="container mt-4 p-3 mb-2 bg-success text-white">
 <form id="pedido">
   <h2>Realizar pedido</h2>
-  <div class="row mb-3">
-    <label for="inputdatetime3" class="col-sm-2 col-form-label">Hora de entrega:</label>
-    <div class="col-sm-10">
-      <input type="datetime-local" class="form-control" id="inputdatetime3">
-    </div>
+
+  <div class="card text-dark mb-3 p-3">
+    <h5>Resumen de tu pedido</h5>
+    @if (pedido().length == 0){
+      <p>Todavía no has añadido pizzas al pedido.</p>
+    } @else {
+      <ul class="list-group list-group-flush">
+        @for (pizza of pedido(); track $index){
+          <li class="list-group-item">
+            <span>{{ pizza.cantidad }}x{{ pizza.nombre }}</span>
+            <span>{{ (pizza.precio * (pizza.cantidad || 1)) }} €</span>
+          </li>
+        }
+      </ul>
+    }
   </div>
-  <div class="row mb-3">
-    <label for="inputdirection3" class="col-sm-2 col-form-label">Dirección de envio</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputdirection3">
+
+    <div class="row g-3">
+      <div class="col-md-6">
+          <label for="inputdatetime3" class="col-sm-2 col-form-label text-nowrap fw-bolder">Hora de entrega:</label>
+          <input type="datetime-local" class="form-control mb-3" id="inputdatetime3">
+      </div>
+      
+      <div class="col-md-6">
+        <label for="inputdirection3" class="col-sm-2 col-form-label text-nowrap fw-bolder">Dirección de envio</label>
+        <input type="text" class="form-control mb-3" id="inputdirection3">
+      </div>
     </div>
-  </div>
-  <fieldset class="row mb-3">
-    <legend class="col-form-label col-sm-2 pt-0">Tipo de pago</legend>
-    <div class="col-sm-10">
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked="">
-        <label class="form-check-label" for="gridRadios1">
-          Bizum
+
+  <legend class="col-form-label text-nowrap m-0 p-0 text-white fw-medium">Tipo de pago</legend>
+  <fieldset class="d-flex align-items-center gap-3 my-3">
+    <div class="d-flex gap-2 m-2">
+        <input type="radio" class="btn-check" name="gridRadios" id="gridRadios1" value="option1" checked autocomplete="off">
+        <label class="btn btn-light rounded-pill px-3 py-1 shadow-sm d-flex align-items-center gap-2 fw-semibold" for="gridRadios1">
+          <i class="bi bi-send-check"></i>
+          <span>Bizum</span>
+        </label>
+
+        <input type="radio" class="btn-check" name="gridRadios" id="gridRadios2" value="option2" autocomplete="off">
+        <label class="btn btn-light rounded-pill px-3 py-1 shadow-sm d-flex align-items-center gap-2 fw-semibold" for="gridRadios2">
+          <i class="bi bi-credit-card"></i>
+          <span>Tarjeta</span>
         </label>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-        <label class="form-check-label" for="gridRadios2">
-          Tarjeta
-        </label>
-      </div>
-    </div>
   </fieldset>
+
   <button type="submit" class="btn btn-light">Pedir y Pagar</button>
 </form>
 </div>

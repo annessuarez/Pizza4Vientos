@@ -5,6 +5,7 @@ import {Header} from './header/header';
 import { Lista } from './lista/lista';
 import { Formulario } from './formulario/formulario';
 import { Footer } from './footer/footer';
+import { PizzaModel } from './models/PizzaModel';
 
 @Component({
   imports: [RouterOutlet, NavBar, Header, Lista, Formulario, Footer],  
@@ -15,4 +16,5 @@ import { Footer } from './footer/footer';
 export class App {
   protected readonly title = signal('4VPizza_AnneSuarez');
   textoFiltro = signal("");
+  pizzasPedidas = signal<PizzaModel[]>([]);
 }

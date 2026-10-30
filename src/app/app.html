@@ -1,5 +1,5 @@
 <app-header></app-header>
 <app-nav-bar (busqueda)="textoFiltro.set($event)"></app-nav-bar>
-<app-lista [filtro] ="textoFiltro()"></app-lista>
-<app-formulario></app-formulario>
+<app-lista [filtro] ="textoFiltro()" (pedido)="pizzasPedidas.set($event)"></app-lista>
+<app-formulario [pedido] = "pizzasPedidas()"></app-formulario>
 <app-footer></app-footer>

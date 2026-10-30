@@ -12,7 +12,7 @@ export class Lista {
   filtro = input('');
   pizzasFiltradas: PizzaModel[] = [];
   carrito: PizzaModel[] = [];
-  pedido = output<PizzaModel[]>();
+  pedido = output<PizzaModel[]>(); //ANNE: para conectarlo con APP
 
   constructor() {
     //ANNE: para que la ppágina no empiece vacía
