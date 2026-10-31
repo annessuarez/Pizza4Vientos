@@ -6,6 +6,14 @@ nav{
   text-decoration: underline;
   text-decoration-color: #AB753F;
   text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+.nav-link.active{
+  text-decoration: underline;
+  text-decoration-color: #AB753F;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
 }
 
 #iconoBuscar{
