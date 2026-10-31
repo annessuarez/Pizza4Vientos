@@ -5,10 +5,16 @@ nav{
 .nav-link:hover {
   text-decoration: underline;
   text-decoration-color: #AB753F;
+  text-decoration-thickness: 2px;
 }
 
-.btn-modificar{
-  background-color: #ffc107;
-  color: #212529;
-  border: 1px solid #ffc107;  
+#iconoBuscar{
+  left: 15px;
+  z-index: 5;
+}
+
+input[type="search"]:focus{
+  border: 2px solid #AB753F;
+  /* ANNE: ladoX ladoY difuminado color */
+  box-shadow:0 0 20px rgb(193, 140, 87);
 }
