@@ -13,6 +13,7 @@ import { PizzaModel } from './models/PizzaModel';
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
+
 export class App {
   protected readonly title = signal('4VPizza_AnneSuarez');
   textoFiltro = signal("");
