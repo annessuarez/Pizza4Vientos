@@ -4,6 +4,14 @@
     box-shadow:0 0 5px rgb(204, 203, 203);
 }
 
+#infoPedido{
+    border: none;
+}
+
+#infoTotal{
+    color: #5C7549;
+}
+
 #mensajeError{
     background-color: #61262D;
 }

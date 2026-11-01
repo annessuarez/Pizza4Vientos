@@ -23,6 +23,14 @@ export class Formulario {
     //ANNE: así se puede navegar
   }
 
+  public calcularTotal(): number{
+    let total = 0;
+    for (let pizza of this.pedido()){
+      total += pizza.precio * (pizza.cantidad || 1);
+    }
+    return total;
+  }
+
   public validarFormulario(): boolean {
     this.mensajeError = [];
 
@@ -88,5 +96,7 @@ export class Formulario {
     const form = document.getElementById('pedido') as HTMLFormElement;
     if (form) form.reset();
   }
+
+
 
 }
