@@ -1,4 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-    background-color:#FFECCC;
+:root {
+  --color-marron: #AB753F;
+  --color-verde: #5C7549;
+  --color-fondo: #FFECCC;
+  --color-oscuro: #1C2430;
+}
+
+body {
+  background-color: var(--color-fondo);
+}
+
+.btn-marron {
+  background-color: var(--color-marron);
+  border-color: var(--color-marron);
+  color: white;
+}
+
+.btn-verde {
+  background-color: var(--color-verde);
+  border-color: var(--color-verde);
+  color: white;
+}
+
+.text-verde {
+  color: var(--color-verde);
 }

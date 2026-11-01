@@ -15,7 +15,7 @@
     
     <form (submit)="Agregar_pizza(); $event.preventDefault()" class="d-flex mx-3 mb-3">
       <input (input)="cantidad = $any($event.target).value" type="number" class="form-control" min="1" placeholder="Cantidad"/>
-      <button class="btn btn-success" id="btnCarrito" type="submit">
+      <button class="btn btn-verde" type="submit">
         <i class="bi bi-cart3"></i>
       </button>
     </form>
