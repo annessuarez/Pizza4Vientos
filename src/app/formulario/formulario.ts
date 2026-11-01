@@ -10,7 +10,7 @@ import {Router } from '@angular/router';
 })
 export class Formulario {
   pedido = input<PizzaModel[]>([]);
-  metodoPago: string = "Bizum";
+  metodoPago: string = "";
   telefono: string = "";
   tarjeta: string = "";
   hora: string = "";

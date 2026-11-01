@@ -1,3 +1,6 @@
+#containerPedido{
+    background-color: #5C7549;
+}
 #mensajeError{
     background-color: #61262D;
 }
@@ -6,3 +9,15 @@
     background-color: #5C7549;
 }
 
+.btn-check:checked + label{
+    background-color: #AB753F;
+    color: white ;
+    border-color: #AB753F;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+#btnPagar{
+    background-color: #AB753F;
+    color: white ;
+    border-color: #AB753F;
+}

@@ -1,4 +1,4 @@
-<div class="container mt-4 p-3 mb-2 bg-success text-white">
+<div class="container mt-4 p-3 mb-2 text-white" id="containerPedido">
 <form id="pedido" (submit)="realizarPago(); $event.preventDefault()">
   <h2>Realizar pedido</h2>
 
@@ -33,7 +33,7 @@
   <legend class="col-form-label text-nowrap m-0 p-0 text-white fw-medium">Tipo de pago</legend>
   <fieldset class="d-flex align-items-center gap-3 my-3">
     <div class="d-flex gap-2 m-2">
-        <input (click)="metodoPago ='Bizum'" type="radio" class="btn-check" name="gridRadios" id="gridRadios1" value="option1" checked autocomplete="off">
+        <input (click)="metodoPago ='Bizum'" type="radio" class="btn-check" name="gridRadios" id="gridRadios1" value="option1" autocomplete="off">
         <label class="btn btn-light rounded-pill px-3 py-1 shadow-sm d-flex align-items-center gap-2 fw-semibold" for="gridRadios1">
           <i class="bi bi-send-check"></i>
           <span>Bizum</span>
@@ -53,8 +53,11 @@
       <input (input)="telefono = $any($event.target).value" type="tel" class="form-control" id="inputTelefono" placeholder="Ej: 612345678" maxlength="9">
     </div>
   }@else if (metodoPago == 'Tarjeta'){
-    <label for="inputNumTelefono" class="form-label fw-semibold">Número de tarjeta (16 dígitos):</label>
-    <input (input)="tarjeta = $any($event.target).value" type="text" class="form-control" id="inputTarjeta" placeholder="Ej: 1234567812345678" maxlength="16">
+    <div class="mb-3">
+      <label for="inputNumTelefono" class="form-label fw-semibold">Número de tarjeta (16 dígitos):</label>
+      <input (input)="tarjeta = $any($event.target).value" type="text" class="form-control" id="inputTarjeta" placeholder="Ej: 1234567812345678" maxlength="16">
+    </div>
+    
   }
 
   @if (mensajeError){
@@ -66,11 +69,11 @@
 
   @if (mensajeValido){
     <div id="mensajeValido" class="alert alert-success m-2" role="alert">
-     <i class="bi bi-info-circle"></i>
+     <i class="bi bi-info-circle m-1"></i>
      {{mensajeValido}}
     </div>
   }
 
-  <button type="submit" class="btn btn-light">Pedir y Pagar</button>
+  <button id="btnPagar" type="submit" class="btn btn-light">Pedir y Pagar</button>
 </form>
 </div>
