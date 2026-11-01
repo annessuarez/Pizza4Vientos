@@ -1,12 +1,19 @@
 #containerPedido{
-    background-color: #5C7549;
+    background-color:#FBF8F2 ;
+    border-radius: 20px;
+    box-shadow:0 0 5px rgb(204, 203, 203);
 }
+
 #mensajeError{
     background-color: #61262D;
 }
 
 #mensajeValido{
     background-color: #5C7549;
+}
+.btnPagar{
+    background-color: #cccbcb;
+    border-color:#918e8e ;
 }
 
 .btn-check:checked + label{

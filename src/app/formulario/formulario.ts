@@ -71,7 +71,7 @@ export class Formulario {
     //ANNE: el setTimeOut se usa para ponerle un tiempo y luego hacer otra accion
     setTimeout(() =>{
       this.router.navigate(['/pizzas']);
-    }, 4000);
+    }, 3000);
 
   }
 

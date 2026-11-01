@@ -1,6 +1,6 @@
 <div class="container mt-4 p-3 mb-2 text-white" id="containerPedido">
 <form id="pedido" (submit)="realizarPago(); $event.preventDefault()">
-  <h2>Realizar pedido</h2>
+  <h2 class="text-dark mb-4 mt-2">REALIZAR PEDIDO</h2>
 
   <div class="card text-dark mb-3 p-3">
     <h5>Resumen de tu pedido</h5>
@@ -18,9 +18,9 @@
     }
   </div>
 
-    <div class="row g-3">
+    <div class="row g-3 text-dark">
       <div class="col-md-6">
-          <label for="inputdatetime3" class="col-sm-2 col-form-label text-nowrap fw-bolder">Hora de entrega:</label>
+          <label for="inputdatetime3" class="col-sm-2 col-form-label text-nowrap fw-bolder">Hora de entrega</label>
           <input (input)="hora = $any($event.target).value" type="datetime-local" class="form-control mb-3" id="inputdatetime3">
       </div>
       
@@ -30,50 +30,50 @@
       </div>
     </div>
 
-  <legend class="col-form-label text-nowrap m-0 p-0 text-white fw-medium">Tipo de pago</legend>
+  <legend class="col-form-label text-nowrap m-0 p-0 text-dark fw-bolder">Tipo de pago</legend>
   <fieldset class="d-flex align-items-center gap-3 my-3">
     <div class="d-flex gap-2 m-2">
         <input (click)="metodoPago ='Bizum'" type="radio" class="btn-check" name="gridRadios" id="gridRadios1" value="option1" autocomplete="off">
-        <label class="btn btn-light rounded-pill px-3 py-1 shadow-sm d-flex align-items-center gap-2 fw-semibold" for="gridRadios1">
+        <label class="btnPagar btn rounded-pill px-3 py-1 shadow-sm d-flex align-items-center gap-2 fw-semibold " for="gridRadios1">
           <i class="bi bi-send-check"></i>
-          <span>Bizum</span>
+          <span>BIZUM</span>
         </label>
 
         <input (click)="metodoPago ='Tarjeta'" type="radio" class="btn-check" name="gridRadios" id="gridRadios2" value="option2" autocomplete="off">
-        <label class="btn btn-light rounded-pill px-3 py-1 shadow-sm d-flex align-items-center gap-2 fw-semibold" for="gridRadios2">
+        <label class="btnPagar btn rounded-pill px-3 py-1 shadow-sm d-flex align-items-center gap-2 fw-semibold" for="gridRadios2">
           <i class="bi bi-credit-card"></i>
-          <span>Tarjeta</span>
+          <span>TARJETA</span>
         </label>
       </div>
   </fieldset>
 
   @if (metodoPago == 'Bizum'){
     <div class="mb-3">
-      <label for="inputNumTelefono" class="form-label fw-semibold">Número de teléfono (9 dígitos):</label>
+      <label for="inputNumTelefono" class="form-label text-dark fw-semibold">Número de teléfono (9 dígitos):</label>
       <input (input)="telefono = $any($event.target).value" type="tel" class="form-control" id="inputTelefono" placeholder="Ej: 612345678" maxlength="9">
     </div>
   }@else if (metodoPago == 'Tarjeta'){
     <div class="mb-3">
-      <label for="inputNumTelefono" class="form-label fw-semibold">Número de tarjeta (16 dígitos):</label>
+      <label for="inputNumTelefono" class="form-label text-dark fw-semibold">Número de tarjeta (16 dígitos):</label>
       <input (input)="tarjeta = $any($event.target).value" type="text" class="form-control" id="inputTarjeta" placeholder="Ej: 1234567812345678" maxlength="16">
     </div>
     
   }
 
   @if (mensajeError){
-    <div id="mensajeError" class="alert alert-danger m-2" role="alert">
+    <div id="mensajeError" class="alert m-2" role="alert">
      <i class="bi bi-exclamation-diamond m-1"></i>
      {{mensajeError}}
     </div>
   }
 
   @if (mensajeValido){
-    <div id="mensajeValido" class="alert alert-success m-2" role="alert">
+    <div id="mensajeValido" class="alert m-2" role="alert">
      <i class="bi bi-info-circle m-1"></i>
      {{mensajeValido}}
     </div>
   }
 
-  <button id="btnPagar" type="submit" class="btn btn-light">Pedir y Pagar</button>
+  <button id="btnPagar" type="submit" class="btn rounded-pill">PEDIR Y PAGAR</button>
 </form>
 </div>
