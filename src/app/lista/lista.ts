@@ -67,26 +67,26 @@ export class Lista {
     },
     {
       nombre: 'BARBACOA',
-      imagen: '1.png',
+      imagen: '5.png',
       precio: 13.0,
       ingredientes: 'Salsa barbacoa, queso mozzarella, carne picada, bacon, cebolla',
     },
     {
       nombre: 'HAWAIANA',
-      imagen: '2.png',
+      imagen: '6.png',
       precio: 11.5,
       ingredientes: 'Salsa de tomate, queso mozzarella, jamón cocido, piña',
     },
     {
       nombre: 'VEGETARIANA',
-      imagen: '3.png',
+      imagen: '7.png',
       precio: 12.0,
       ingredientes:
         'Salsa de tomate, queso mozzarella, pimiento verde, pimiento rojo, cebolla',
     },
     {
       nombre: 'CARBONARA',
-      imagen: '4.png',
+      imagen: '8.png',
       precio: 13.0,
       ingredientes: 'Nata fresca, queso mozzarella, bacon, champiñones, pimienta negra',
     },
