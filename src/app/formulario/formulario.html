@@ -1,79 +1,138 @@
 <div class="container mt-4 p-3 mb-2 text-white" id="containerPedido">
-<form id="pedido" (submit)="realizarPago(); $event.preventDefault()">
-  <h2 class="text-dark mb-4 mt-2">REALIZAR PEDIDO</h2>
+  <form id="pedido" (submit)="realizarPago(); $event.preventDefault()">
+    <h2 class="text-dark mb-4 mt-2">REALIZAR PEDIDO</h2>
 
-  <div class="card text-dark mb-3 p-3">
-    <h5>Resumen de tu pedido</h5>
-    @if (pedido().length == 0){
-      <p>Todavía no has añadido pizzas al pedido.</p>
-    } @else {
-      <ul class="list-group list-group-flush">
-        @for (pizza of pedido(); track $index){
-          <li class="list-group-item">
-            <span>{{ pizza.cantidad }}x{{ pizza.nombre }}</span>
-            <span>{{ (pizza.precio * (pizza.cantidad || 1)) }} €</span>
-          </li>
-        }
-      </ul>
-    }
-  </div>
+    <div class="card text-dark mb-3 p-3">
+      <h5>Resumen de tu pedido</h5>
+      @if (pedido().length == 0) {
+        <p>Todavía no has añadido pizzas al pedido.</p>
+      } @else {
+        <ul class="list-group list-group-flush">
+          @for (pizza of pedido(); track $index) {
+            <li class="list-group-item">
+              <span>{{ pizza.cantidad }}x{{ pizza.nombre }}</span>
+              <span>{{ pizza.precio * (pizza.cantidad || 1) }} €</span>
+            </li>
+          }
+        </ul>
+      }
+    </div>
 
     <div class="row g-3 text-dark">
       <div class="col-md-6">
-          <label for="inputdatetime3" class="col-sm-2 col-form-label text-nowrap fw-bolder">Hora de entrega</label>
-          <input (input)="hora = $any($event.target).value" type="datetime-local" class="form-control mb-3" id="inputdatetime3">
+        <label for="inputdatetime3" class="col-sm-2 col-form-label text-nowrap fw-bolder"
+          >Hora de entrega</label
+        >
+        <input
+          (input)="hora = $any($event.target).value"
+          type="datetime-local"
+          class="form-control mb-3"
+          id="inputdatetime3"
+        />
       </div>
-      
+
       <div class="col-md-6">
-        <label for="inputdirection3" class="col-sm-2 col-form-label text-nowrap fw-bolder">Dirección de envio</label>
-        <input (input)="direccion = $any($event.target).value" type="text" class="form-control mb-3" id="inputdirection3">
+        <label for="inputdirection3" class="col-sm-2 col-form-label text-nowrap fw-bolder"
+          >Dirección de envio</label
+        >
+        <input
+          (input)="direccion = $any($event.target).value"
+          type="text"
+          class="form-control mb-3"
+          id="inputdirection3"
+        />
       </div>
     </div>
 
-  <legend class="col-form-label text-nowrap m-0 p-0 text-dark fw-bolder">Tipo de pago</legend>
-  <fieldset class="d-flex align-items-center gap-3 my-3">
-    <div class="d-flex gap-2 m-2">
-        <input (click)="metodoPago ='Bizum'" type="radio" class="btn-check" name="gridRadios" id="gridRadios1" value="option1" autocomplete="off">
-        <label class="btnPagar btn rounded-pill px-3 py-1 shadow-sm d-flex align-items-center gap-2 fw-semibold " for="gridRadios1">
+    <legend class="col-form-label text-nowrap m-0 p-0 text-dark fw-bolder">Tipo de pago</legend>
+    <fieldset class="d-flex align-items-center gap-3 my-3">
+      <div class="d-flex gap-2 m-2">
+        <input (click)="metodoPago = 'Bizum'"type="radio" class="btn-check" name="gridRadios" id="gridRadios1" value="option1" autocomplete="off" />
+        <label
+          class="btnPagar btn rounded-pill px-3 py-1 shadow-sm d-flex align-items-center gap-2 fw-semibold"
+          for="gridRadios1">
           <i class="bi bi-send-check"></i>
           <span>BIZUM</span>
         </label>
 
-        <input (click)="metodoPago ='Tarjeta'" type="radio" class="btn-check" name="gridRadios" id="gridRadios2" value="option2" autocomplete="off">
-        <label class="btnPagar btn rounded-pill px-3 py-1 shadow-sm d-flex align-items-center gap-2 fw-semibold" for="gridRadios2">
+        <input
+          (click)="metodoPago = 'Tarjeta'"
+          type="radio"
+          class="btn-check"
+          name="gridRadios"
+          id="gridRadios2"
+          value="option2"
+          autocomplete="off"
+        />
+        <label
+          class="btnPagar btn rounded-pill px-3 py-1 shadow-sm d-flex align-items-center gap-2 fw-semibold"
+          for="gridRadios2"
+        >
           <i class="bi bi-credit-card"></i>
           <span>TARJETA</span>
         </label>
       </div>
-  </fieldset>
+    </fieldset>
 
-  @if (metodoPago == 'Bizum'){
-    <div class="mb-3">
-      <label for="inputNumTelefono" class="form-label text-dark fw-semibold">Número de teléfono (9 dígitos):</label>
-      <input (input)="telefono = $any($event.target).value" type="tel" class="form-control" id="inputTelefono" placeholder="Ej: 612345678" maxlength="9">
-    </div>
-  }@else if (metodoPago == 'Tarjeta'){
-    <div class="mb-3">
-      <label for="inputNumTelefono" class="form-label text-dark fw-semibold">Número de tarjeta (16 dígitos):</label>
-      <input (input)="tarjeta = $any($event.target).value" type="text" class="form-control" id="inputTarjeta" placeholder="Ej: 1234567812345678" maxlength="16">
-    </div>
+    @if (metodoPago == 'Bizum') {
+      <div class="mb-3">
+        <label for="inputNumTelefono" class="form-label text-dark fw-semibold"
+          >Número de teléfono (9 dígitos):</label
+        >
+        <input
+          (input)="telefono = $any($event.target).value"
+          type="tel"
+          class="form-control"
+          id="inputTelefono"
+          placeholder="Ej: 612345678"
+          maxlength="9"
+        />
+      </div>
+    } @else if (metodoPago == 'Tarjeta') {
+      <div class="mb-3">
+        <label for="inputNumTelefono" class="form-label text-dark fw-semibold"
+          >Número de tarjeta (16 dígitos):</label
+        >
+        <input
+          (input)="tarjeta = $any($event.target).value"
+          type="text"
+          class="form-control"
+          id="inputTarjeta"
+          placeholder="Ej: 1234567812345678"
+          maxlength="16"
+        />
+      </div>
+    }
+
     
-  }
-
-  @if (mensajeError){
-    <div id="mensajeError" class="alert m-2" role="alert">
-     <i class="bi bi-exclamation-diamond m-1"></i>
-     {{mensajeError}}
+  @if (mensajeError.length != 0) {
+    <div id="mensajeError" class="alert p-2" role="alert">
+      @for (error of mensajeError; track $index) {
+        <div class="d-block m-1">
+          <i class="bi bi-exclamation-diamond p-3"></i>{{ error }}
+        </div>
+      }
     </div>
   }
-
-  @if (mensajeValido){
+  
+  @if (mensajeValido) {
     <div id="mensajeValido" class="alert m-2" role="alert">
-     <i class="bi bi-info-circle m-1"></i>
-     {{mensajeValido}}
+      <i class="bi bi-info-circle m-1"></i>
+      {{ mensajeValido }}
     </div>
   }
 
-  <button id="btnPagar" type="submit" class="btn rounded-pill">PEDIR Y PAGAR</button>
-</form>
+  <!-- ANNE: fieldset agrupa campos que estan relacionados entre si -->
+    <fieldset class="d-flex justify-content-center gap-4 mt-4">
+      <button type="submit" class="btn rounded-pill" id="btnPagar">
+        <i class="bi bi-credit-card-2-front"></i>
+        <span class="p-2">PAGAR</span>
+      </button>
+
+      <button (click)="limpiarFormulario()" type="button" class="btn rounded-pill" id="btnLimpiar">
+        <i class="bi bi-trash"></i>
+        <span class="p-2">LIMPIAR</span>
+      </button>
+    </fieldset>
+  </form>
 </div>
