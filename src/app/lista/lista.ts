@@ -82,7 +82,7 @@ export class Lista {
       imagen: '7.png',
       precio: 12.0,
       ingredientes:
-        'Salsa de tomate, queso mozzarella, pimiento verde, pimiento rojo, cebolla',
+        'Salsa de tomate, pimiento verde, pimiento rojo, cebolla',
     },
     {
       nombre: 'CARBONARA',
