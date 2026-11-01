@@ -1,10 +1,11 @@
 import { Component, output } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  imports: [],
+  imports: [RouterLink, RouterLinkActive],
   selector: 'app-nav-bar',
   styleUrl: './nav-bar.css',
-  templateUrl: './nav-bar.html',
+  templateUrl: './nav-bar.html'
 })
 export class NavBar {
   buscarIngrediente = "";

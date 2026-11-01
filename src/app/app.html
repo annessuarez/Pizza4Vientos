@@ -1,5 +1,6 @@
 <app-header></app-header>
 <app-nav-bar (busqueda)="textoFiltro.set($event)"></app-nav-bar>
-<app-lista [filtro] ="textoFiltro()" (pedido)="pizzasPedidas.set($event)"></app-lista>
-<app-formulario [pedido] = "pizzasPedidas()"></app-formulario>
+<!-- <app-lista [filtro] ="textoFiltro()" (pedido)="pizzasPedidas.set($event)"></app-lista>
+<app-formulario [pedido] = "pizzasPedidas()"></app-formulario> -->
+<router-outlet></router-outlet>
 <app-footer></app-footer>
