@@ -10,9 +10,9 @@
         </li>
       </ul>
       <!-- ANNE: el $event.preventDefault() evita que el nav recarge la pag al enviar el form-->
-      <form (submit)="Buscar_ingrediente(); $event.preventDefault()" class="d-flex position-relative align-items-center">
+      <form (submit)="$event.preventDefault()" class="d-flex position-relative align-items-center">
           <i class="bi bi-search position-absolute text-muted" id="iconoBuscar"></i>
-          <input (input)="buscarIngrediente = $any($event.target).value" class="form-control rounded-pill ps-5" type="search" placeholder="Busca por ingredientes..." aria-label="Search">
+          <input (input)="buscarIngrediente = $any($event.target).value; Buscar_ingrediente()"  class="form-control rounded-pill ps-5" type="search" placeholder="Busca por ingredientes..." aria-label="Search">
       </form>
     </div>
   </div>
