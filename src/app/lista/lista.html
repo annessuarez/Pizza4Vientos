@@ -1,4 +1,9 @@
 <div class="container my-4" id="pizzas">
+  @if (mensajePopUp) {
+    <div class="alert alert-success position-fixed bottom-0 end-0 m-4 shadow-lg" style="z-index: 1055;">
+      <i class="bi bi-check-circle-fill me-2"></i>{{ mensajePopUp }}
+    </div>
+  }
   <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 g-4">
     @for (pizza of pizzasFiltradas; track $index){
       <app-pizza-card [pizza]="pizza" 

@@ -13,6 +13,7 @@ export class Lista {
   pizzasFiltradas: PizzaModel[] = [];
   carrito: PizzaModel[] = [];
   pedido = output<PizzaModel[]>(); //ANNE: para conectarlo con APP
+  mensajePopUp: string = "";
 
   constructor() {
     //ANNE: para que la ppágina no empiece vacía
@@ -21,14 +22,14 @@ export class Lista {
     effect(() => {
       this.obtener_pizzas(this.filtro());
     });
-  }
+  } 
   
   //TODO: repasar esta función
   public obtener_pizzas(buscado: string) {
     this.pizzasFiltradas = [];
-    for (let p of this.pizzas) {
-      if (p.ingredientes.toLowerCase().includes(buscado.toLowerCase())) {
-        this.pizzasFiltradas.push(p);
+    for (let pizza of this.pizzas) {
+      if (pizza.ingredientes.toLowerCase().includes(buscado.toLowerCase())) {
+        this.pizzasFiltradas.push(pizza);
       }
     }
   }
@@ -37,6 +38,11 @@ export class Lista {
   public recibir_pizzas(obtenida: PizzaModel){
     this.carrito.push(obtenida);
     this.pedido.emit(this.carrito);
+    this.mensajePopUp = `Has añadido ${obtenida.cantidad || 1}x ${obtenida.nombre} al pedido.`;
+    
+    setTimeout(() => {
+      this.mensajePopUp = "";
+    }, 2000);
   }
 
   pizzas: PizzaModel[] = [
