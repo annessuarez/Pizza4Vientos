@@ -1,6 +1,12 @@
 <app-header></app-header>
-<app-nav-bar (busqueda)="textoFiltro.set($event)"></app-nav-bar>
-<!-- <app-lista [filtro] ="textoFiltro()" (pedido)="pizzasPedidas.set($event)"></app-lista>
+<app-nav-bar (busqueda)="textoFiltro.set($event)" (cambiarPagina)="paginaActual.set($event)"></app-nav-bar>
+<!-- 
 <app-formulario [pedido] = "pizzasPedidas()"></app-formulario> -->
-<router-outlet></router-outlet>
+
+@if (paginaActual() == 'pizzas'){
+    <app-lista [filtro] ="textoFiltro()" (pedido)="pizzasPedidas.set($event)"></app-lista>
+}@else if (paginaActual()== 'pedido'){
+    <app-formulario [pedido]="pizzasPedidas()"></app-formulario>
+}
+
 <app-footer></app-footer>

@@ -17,4 +17,5 @@ export class App {
   protected readonly title = signal('4VPizza_AnneSuarez');
   textoFiltro = signal("");
   pizzasPedidas = signal<PizzaModel[]>([]);
+  paginaActual = signal('pizzas');
 }

@@ -9,6 +9,7 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class NavBar {
   buscarIngrediente = "";
+  cambiarPagina = output<string>();
 
   busqueda = output<string>();
   public Buscar_ingrediente(){
