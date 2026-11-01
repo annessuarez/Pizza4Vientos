@@ -17,6 +17,7 @@ export class Formulario {
   direccion: string = "";
   mensajeError: string[] = [];
   mensajeValido: string = "";
+  cambiarPagina = output<string>();
 
   constructor (private router: Router){
     //ANNE: así se puede navegar
@@ -65,10 +66,11 @@ export class Formulario {
     this.tarjeta = "";
     this.hora = "";
     this.direccion = "";
+    
 
     //ANNE: el setTimeOut se usa para ponerle un tiempo y luego hacer otra accion
     setTimeout(() =>{
-      this.router.navigate(['/pizzas']);
+      this.cambiarPagina.emit('pizzas');
     }, 3000);
 
   }

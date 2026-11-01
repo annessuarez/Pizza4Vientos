@@ -6,7 +6,7 @@
 @if (paginaActual() == 'pizzas'){
     <app-lista [filtro] ="textoFiltro()" (pedido)="pizzasPedidas.set($event)"></app-lista>
 }@else if (paginaActual()== 'pedido'){
-    <app-formulario [pedido]="pizzasPedidas()"></app-formulario>
+    <app-formulario [pedido]="pizzasPedidas()" (cambiarPagina)="paginaActual.set($event)"></app-formulario>
 }
 
 <app-footer></app-footer>
