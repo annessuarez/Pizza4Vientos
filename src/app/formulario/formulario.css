@@ -17,9 +17,9 @@
 }
 
 .btn-check:checked + label{
-    background-color: #AB753F;
+    background-color: #5C7549;
     color: white ;
-    border-color: #AB753F;
+    border-color: #5C7549;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 

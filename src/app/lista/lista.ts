@@ -42,50 +42,50 @@ export class Lista {
   pizzas: PizzaModel[] = [
     // ANNE: es lo mismo que hacer en java List<PizzaModel> pizzas = new ArrayList<>;
     {
-      nombre: 'Margarita',
+      nombre: 'MARGARITA',
       imagen: '1.png',
       precio: 10.5,
       ingredientes: 'Salsa de tomate, queso mozzarella, albahaca fresca',
     },
     {
-      nombre: 'Prosciutto',
+      nombre: 'PROSCIUTTO',
       imagen: '2.png',
       precio: 12.0,
       ingredientes: 'Salsa de tomate, queso mozzarella, jamón cocido, champiñones',
     },
     {
-      nombre: 'CuatroQuesos',
+      nombre: 'CUATRO QUESOS',
       imagen: '3.png',
       precio: 13.5,
       ingredientes: 'Queso mozzarella, gorgonzola, parmesano, queso de cabra',
     },
     {
-      nombre: 'Pepperoni',
+      nombre: 'PEPPERONI',
       imagen: '4.png',
       precio: 12.5,
       ingredientes: 'Salsa de tomate, queso mozzarella, pepperoni picante',
     },
     {
-      nombre: 'Barbacoa',
+      nombre: 'BARBACOA',
       imagen: '1.png',
       precio: 13.0,
       ingredientes: 'Salsa barbacoa, queso mozzarella, carne picada, bacon, cebolla',
     },
     {
-      nombre: 'Hawaiana',
+      nombre: 'HAWAIANA',
       imagen: '2.png',
       precio: 11.5,
       ingredientes: 'Salsa de tomate, queso mozzarella, jamón cocido, piña',
     },
     {
-      nombre: 'Vegetariana',
+      nombre: 'VEGETARIANA',
       imagen: '3.png',
       precio: 12.0,
       ingredientes:
         'Salsa de tomate, queso mozzarella, pimiento verde, pimiento rojo, cebolla',
     },
     {
-      nombre: 'Carbonara',
+      nombre: 'CARBONARA',
       imagen: '4.png',
       precio: 13.0,
       ingredientes: 'Nata fresca, queso mozzarella, bacon, champiñones, pimienta negra',
