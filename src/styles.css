@@ -4,6 +4,7 @@
   --color-verde: #5C7549;
   --color-fondo: #FFECCC;
   --color-oscuro: #1C2430;
+  --color-burdeos: #61262d;
 }
 
 body {
@@ -24,4 +25,10 @@ body {
 
 .text-verde {
   color: var(--color-verde);
+}
+
+.fondo-burdeos {
+  background-color: var(--color-burdeos);
+  border-color: var(--color-burdeos);
+  color: white;
 }
